@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, Image } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { NativeBaseProvider, Button, Input, Heading } from 'native-base'
-import pizzaImage from './assets/pizza.png'
+import pizzaImage from './assets/pizza.jpg'
 
 function HomeScreen({ route, navigation }) {
   const [userEmail, setEmailAddress] = React.useState('');
