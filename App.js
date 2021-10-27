@@ -5,7 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { NativeBaseProvider, Button, Input, Heading } from 'native-base'
 import pizzaImage from './assets/pizza.jpg'
 
-function HomeScreen({ route, navigation }) {
+function HomeScreen({ navigation }) {
   const [userEmail, setEmailAddress] = React.useState('');
   const [storedEmail, setStoredEmail] = React.useState('');
 
@@ -49,7 +49,7 @@ function HomeScreen({ route, navigation }) {
   );
 }
 
-function WelcomeScreen({ route, navigation }) {
+function WelcomeScreen({ route }) {
   const { email, exists } = route.params
 
   return (
