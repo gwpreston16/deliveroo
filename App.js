@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { View, Text, StyleSheet, Image } from 'react-native'
+import { View, Text, StyleSheet, Image, Alert } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { NativeBaseProvider, Button, Input, Heading } from 'native-base'
@@ -11,7 +11,14 @@ function HomeScreen({ navigation }) {
 
   let onPress = () => {
     let params = { email: userEmail, exists: false }
-    if(userEmail == storedEmail) {
+    if(userEmail == '') {
+      Alert.alert('Error!', 'You must provide a user email.', [
+        {
+          text: 'OK'
+        }
+      ]);
+    }
+    else if(userEmail == storedEmail) {
       params.exists = true
       navigation.navigate('Welcome', params)
     }
